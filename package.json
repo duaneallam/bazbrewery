@@ -1,0 +1,19 @@
+{
+  "name": "baz_brewery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tempSensor.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqp-mock": "^0.1.4-1",
+    "amqplib": "^0.5.1",
+    "blessed": "^0.1.81"
+  },
+  "devDependencies": {
+    "amqp-mock": "^0.1.4-1"
+  }
+}
