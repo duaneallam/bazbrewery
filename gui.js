@@ -11,9 +11,9 @@ screen.title = 'Baz\'s Brew Transport';
 var box = blessed.box({
   top: 'center',
   left: 'center',
-  width: '50%',
-  height: '50%',
-  content: '{center}Baz\'s Brew Transport{/center}',
+  width: '75%',
+  height: '75%',
+  content: '{center}Container Temperature{/center}',
   tags: true,
   border: {
     type: 'line'

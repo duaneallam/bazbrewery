@@ -46,20 +46,20 @@ describe('sensorController.js', function(){
 				
 			
 		});
-		it('should send messages for 6 different teperature sensors', function(done){
+		it('should send messages for config.containers.length different teperature sensors', function(done){
 			this.timeout(20000)
-			var results = [false,false,false,false,false,false];
+			var results = [];
 			var count = 0;
 
 			channel.consume(q, function(msg) {
 				var temp = JSON.parse(msg.content.toString());
-		    	results[temp.id - 1] = true;
+		    	if(results.indexOf(temp.id) == -1){
+		    		results.push(temp.id);
+		    	}
 		    	count++;
-		    	if(count == 12){
+		    	if(count == config.containers.length * 2){
 		    		channel.cancel(msg.fields.consumerTag,done);
-		    		results.forEach(function(result){
-		    			assert.ok(result);
-		    		});
+		    		assert.ok(results.length == config.containers.length);
 		    	}
 		    	
 
